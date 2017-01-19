@@ -1,0 +1,73 @@
+.overlay {
+  position: absolute;
+  display: flex;
+  background: #42689C;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: absolute;
+  background: #618CDD;
+  width: 500px;
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  border-radius: 4px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal form button,
+.modal form input {
+  width: 450px;
+  border: none;
+  color: #FFF;
+  padding: 20px;
+}
+
+.modal form input {
+  background: #72A0F2;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+}
+
+.modal form .inline-fields {
+  display: flex;
+  border: none;
+  margin-bottom: 3px;
+  width: 450px;
+}
+
+.modal form .inline-fields input:nth-child(2) {
+  width: 200px;
+  margin-left: 3px;
+}
+
+.modal form button {
+  background: #84AFFC;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal form button.submit {
+  width: 100%;
+  position: relative;
+  background: #8CE650;
+  margin-top: 40px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.cards,
+.description,
+.payment-details {
+  visibility: hidden;
+}
