@@ -69,5 +69,18 @@
 .cards,
 .description,
 .payment-details {
-  visibility: hidden;
+  font-family: Proxima Nova;
+  font-weight: 400;
+  text-align: center;
+}
+
+.payment-details {
+  margin-top: 100px;
+}
+
+.description {
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
