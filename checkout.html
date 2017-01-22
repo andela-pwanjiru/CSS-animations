@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="checkout.css">
     <link rel="stylesheet" href="bower_components/gallery/dist/gallery.theme.css">
     <link rel="stylesheet" href="bower_components/gallery/dist/gallery.min.css">
+    <script type="text/javascript">
+    function load_login() {
+        $("#modal").load("load.html");
+    }
+    </script>
 </head>
 
 <body>
@@ -33,27 +38,20 @@
                     <a href="#item-3" class="control-button">•</a>
                 </div>
             </div>
-            <!-- <ul class="cards">
-    <li class="card">mastercard</li>
-    <li class="card">paypal</li>
-    <li class="card">visa</li>
-</ul>
-<div class="modal-header"></div>
-<form class="form-checkout">
-    <input type="text" name="card-name" placeholder="CARD NAME" />
-    <input type="text" name="card-number" placeholder="CARD NUMBER" />
-    <div class="inline-fields">
-        <input type="text" name="expiry" placeholder="EXPIRY" />
-        <input type="text" name="cvv" placeholder="CVV" />
-    </div>
-    <button class="scan">scan card</button>
-    <button class="submit">complete order</button>
-</form>
-<div class="success-overlay"><span class="icon-tick"></span></div>
-</div>
-</div>
-<button class="md-trigger"></button>
- -->
+        </div>
+        <div class="fill">
+            <form class="form-checkout">
+                <input type="text" name="card-name" placeholder="CARD NAME" />
+                <input type="text" name="card-number" placeholder="CARD NUMBER" />
+                <div class="inline-fields">
+                    <input type="text" name="expiry" placeholder="EXPIRY" />
+                    <input type="text" name="cvv" placeholder="CVV" />
+                </div>
+                <button class="scan">scan card</button>
+                <button class="submit">complete order</button>
+            </form>
+        </div>
+        <button id="login" onclick="load_login()" type="button" class="btn btn-login">Login</button>
 </body>
 
 </html>
