@@ -1,3 +1,7 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 .overlay {
   position: absolute;
   display: flex;
@@ -16,49 +20,118 @@
   width: 500px;
   box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.3);
   color: #FFF;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.modal form {
+.modal .description {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.modal .description h3 {
+  font-weigth: 100;
+  font-size: 20px;
+}
+
+.modal .description p {
+  font-size: 12px;
+}
+
+.modal .cards {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 20% auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.modal .cards .card {
+  position: absolute;
+  width: 70%;
+  margin: 0 auto;
+  z-index: 20;
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 1px 1px 15px -1px rgba(0, 0, 0, 0.3);
+  transform-origin: 0 0;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+  cursor: pointer;
+  user-select: none;
+}
+
+.modal .cards .card img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.modal .cards .card-next {
+  z-index: 5;
+  transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+}
+
+.modal .cards .card-out {
+  animation: card-out 0.9s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+  transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  z-index: 1;
+}
+
+.modal .cards .card-current {
+  cursor: auto;
+  user-select: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  background: #fff;
+  transform: rotate(-1deg) translateX(0%) scale(1);
+}
+
+.modal .form-checkout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 
-.modal form button,
-.modal form input {
+.modal .form-checkout button,
+.modal .form-checkout input {
   width: 450px;
   border: none;
   color: #FFF;
   padding: 20px;
 }
 
-.modal form input {
+.modal .form-checkout input {
   background: #72A0F2;
   margin-bottom: 3px;
   box-sizing: border-box;
 }
 
-.modal form .inline-fields {
+.modal .form-checkout .inline-fields {
   display: flex;
   border: none;
   margin-bottom: 3px;
   width: 450px;
 }
 
-.modal form .inline-fields input:nth-child(2) {
+.modal .form-checkout .inline-fields input:nth-child(2) {
   width: 200px;
   margin-left: 3px;
 }
 
-.modal form button {
+.modal .form-checkout button {
   background: #84AFFC;
   text-transform: uppercase;
   cursor: pointer;
+  outline: none;
 }
 
-.modal form button.submit {
+.modal .form-checkout button.submit {
   width: 100%;
   position: relative;
   background: #8CE650;
@@ -66,21 +139,51 @@
   border-radius: 0px 0px 4px 4px;
 }
 
-.cards,
-.description,
-.payment-details {
-  font-family: Proxima Nova;
-  font-weight: 400;
-  text-align: center;
+.modal .form-checkout button.success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #8CE650;
+  transform: translate(-50%, -50%) scale(100);
+  animation: successContainer 10s ease;
 }
 
-.payment-details {
-  margin-top: 100px;
+.modal-header {
+  display: none;
+  width: 100%;
+  background: #FFF;
+  top: 0;
+  left: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 60px 0;
+  margin-bottom: 10px;
 }
 
-.description {
-  font-size: 10px;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-bottom: 40px;
+.modal-header img {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes card-out {
+  0% {
+    z-index: 20;
+    transform: translateY(0px) rotate(-4deg);
+  }
+  20% {
+    transform: translate3d(20px, 0, 0);
+  }
+  45% {
+    transform: translate3d(-480px, 0, 0);
+  }
+  65% {
+    z-index: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: transalateY(-50px) rotate(8deg) scale(0.95) translateX(55px);
+  }
 }
