@@ -1,0 +1,18 @@
+body {}
+
+input[type=range]::before {
+  content: attr(min);
+}
+
+;
+input[type=range]::after {
+  content: attr(max);
+}
+
+;
+input[type=range] {
+  color: red;
+  font-family: helvetica;
+  width: 200px;
+  font-size: large;
+}
