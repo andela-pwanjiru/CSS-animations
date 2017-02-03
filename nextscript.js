@@ -13,4 +13,12 @@ function saveItem() {
 
 }
 
+function retrieveItem() {
+  var data = document.getElementById('data');
+  var key = document.getElementById('key').value;
+  var value = sesssionStorage[key];
+  data.innerHTML = '<div>' + key + ':' + value + '<div>';
+
+}
+
 addEventListener("load", initiate);
